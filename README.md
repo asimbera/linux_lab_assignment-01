@@ -72,30 +72,42 @@ Your supervisor wants you to demonstrate your understanding of Linux file and di
 Create a directory named documents inside your home directory. This directory will store your project-related files.
 ![alt text](Question_2/1.png)
 
+`mkdir` creates directories.
+
 2. File Creation
 
 Navigate into the documents directory and create a file named plan.txt.
 ![alt text](Question_2/2.png)
+
+`touch` creates files.
 
 3. Content Addition
 
 Write some sample text of your choice into the plan.txt file. The content can be a short project note or reminder.
 ![alt text](Question_2/3.png)
 
+using redirection with `cat` to interactively write text to a file.
+
 4. File Metadata Verification
 
 Display the permissions and ownership details of the plan.txt file. Ensure your username appears in the output.
 ![alt text](Question_2/4.png)
+
+`ls -l` displays file attributes in current directory.
 
 5. File Duplication
 
 Create a copy of plan.txt and name it plan_copy.txt.
 ![alt text](Question_2/5.png)
 
+`cp` command creates copy.
+
 6. Directory Renaming
 
 Rename the documents directory to project_documents to reflect the project scope more clearly.
 ![alt text](Question_2/6.png)
+
+`mv` command used to move or rename files.
 
 7. Archival Structure
 
@@ -112,10 +124,14 @@ Move plan_copy.txt into the archive subdirectory.
 List all files and subdirectories inside project_documents recursively so that the complete directory structure is visible.
 ![alt text](Question_2/9.png)
 
+adding `-R` flag to `ls` command recursively lists files in nested directories.
+
 10. Path Verification
 
 Display the absolute path of the plan_copy.txt file after it has been moved to the archive directory.
 ![alt text](Question_2/10.png)
+
+`realpath` returns the absolute path of a file.
 
 ## Question 3
 
@@ -190,47 +206,67 @@ These tasks should be executed within your own user account. Since uptime, proce
 Display the time elapsed since the system was last booted.
 ![alt text](Question_4/1.png)
 
+`uptime` command returns system uptime, users logged in, and avarage load for 1 min, 5 min and 15 mins.
+
 2. User Process Listing
 
 List all processes currently running under your user account.
 ![alt text](Question_4/2.png)
+
+`ps` command displays user's running processes.
 
 3. CPU Usage Analysis
 
 Identify the process that is consuming the highest CPU usage among your running processes.
 ![alt text](Question_4/3.png)
 
+`-e` displays all processes, `o` is for format, and `--sort` is used to sort process by cpu usage.
+
 4. Background Process Execution
 
 Start a command in the background and verify that it is running.
 ![alt text](Question_4/4.png)
+
+adding `&` to a command puts a process to run in background of current shell session, it will be terminated if user exits / logs off current session.
 
 5. Process Priority Management
 
 Change the priority (niceness) of one of your running processes and display the updated priority.
 ![alt text](Question_4/5.png)
 
+`renice` is used to set process priority, here we are incresiong priority by +3 for `bash` user process.
+
 6. Memory Usage Monitoring
 
 Display memory usage information in a human-readable format.
 ![alt text](Question_4/6.png)
+
+`free` command with `-h` flag is used to display mem usage in human readable format.
 
 7. Disk Space Inspection
 
 Display the disk space usage of the filesystem where your home directory resides.
 ![alt text](Question_4/7.png)
 
+the underlying fs for my `/home/asim` directory is mounted at `/`, using `df` with `-h` flag to display total, used, available and %.
+
 8. Shell Identification
 
 Display the name of the shell currently in use.
 ![alt text](Question_4/8.png)
+
+`$SHELL` environment variable holds current running shell value.
 
 9. Output Redirection
 
 Redirect the output of a system information command of your choice into a file named system_report.txt.
 ![alt text](Question_4/9.png)
 
+`>` is used to redirect output of a shell command to a file.
+
 10. Disk Usage Visualization
 
 Demonstrate the usage of the ncdu tool using appropriate options and briefly explain what it shows.
 ![alt text](Question_4/10.png)
+
+`ncdu` is a ncurses based utility with similer funtionallity to `du`. It have many useful command line flags and those can be also set while it is running, pressing `?` displays list of available shortcuts.
